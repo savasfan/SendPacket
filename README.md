@@ -1,5 +1,3 @@
-# SendPacket
-Nada
 library Project1;
 
 { Important note about DLL memory management: ShareMem must be the
@@ -31,23 +29,10 @@ uses
   Unit1 in 'Unit1.pas';
 
 Var
-  ADDR_SENDPACKET  : DWORD = $00405FF0;
-  hProcess, hThread, H:Thandle;
+hProcess, hThread, H:Thandle;
 Hid: Cardinal;
 b: Boolean=false;
- {$R *.res}
-
-  Procedure SendPacket(Buffer : ARRAY OF BYTE; tamanho : DWORD);
- begin
-   asm
-   push tamanho //Pega o tamanho
-   push Buffer //Pega o conteúdo
-   call ADDR_SENDPACKET
-   end;
-   end;
-
-
-
+{$R *.res}
 
 Procedure Chamar;
 begin
